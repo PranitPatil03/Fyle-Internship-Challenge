@@ -1,22 +1,44 @@
 $(document).ready(function () {
   const $form = $("#form");
-  const $annual_income = $("#annual_income");
-  const $extra_income = $("#extra_income");
+  const $annualIncome = $("#annual_income");
+  const $extraIncome = $("#extra_income");
   const $deductions = $("#deductions");
   const $age = $("#age");
+
+  function calculateTax(annualIncome, extraIncome, deductions, age) {
+    const taxRates = {
+      under40: 0.3,
+      "40to60": 0.4,
+      over60: 0.1,
+    };
+
+    const overallIncome = annualIncome + extraIncome - deductions;
+    const taxPercentage = taxRates[age];
+
+    if (overallIncome > 800000) {
+      const tax = taxPercentage * (overallIncome - 8);
+      return overallIncome - tax;
+    } else {
+      return overallIncome;
+    }
+  }
 
   $form.submit(function (event) {
     event.preventDefault();
 
-    const annual_income_value = $annual_income.val();
-    const extra_income_value = $extra_income.val();
-    const deductions_value = $deductions.val();
-    const age_value = $age.val();
+    const annualIncome = parseFloat($annualIncome.val());
+    const extraIncome = parseFloat($extraIncome.val());
+    const deductions = parseFloat($deductions.val());
+    const age = $age.val();
 
-    console.log("annual_income_value", annual_income_value);
-    console.log("extra_income_value", extra_income_value);
-    console.log("deductions_value", deductions_value);
-    console.log("age_value", age_value);
+    const afterTaxIncome = calculateTax(
+      annualIncome,
+      extraIncome,
+      deductions,
+      age
+    );
+
+    $("#result").text(afterTaxIncome.toFixed(2));
   });
 
   function checkRequiredFields() {
@@ -26,15 +48,15 @@ $(document).ready(function () {
         isValid = false;
       }
     });
-
+  
     $("#submit").prop("disabled", !isValid);
   }
-
+  
   checkRequiredFields();
-
+  
   $("#form :input[required]").on("input", function () {
     checkRequiredFields();
   });
-
+  
   $('[data-bs-toggle="tooltip"]').tooltip();
 });

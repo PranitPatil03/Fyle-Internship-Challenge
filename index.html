@@ -117,9 +117,9 @@
               required
             >
               <option selected></option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="1">&lt;40</option>
+              <option value="2">&ge;40 &amp; &lt;60</option>
+              <option value="3">&ge;60</option>
             </select>
           </div>
           <div class="mb-3">
@@ -153,7 +153,6 @@
             class="btn btn-primary submit"
             data-bs-toggle="modal"
             data-bs-target="#submitModal"
-            disabled
           >
             Submit
           </button>
@@ -173,7 +172,7 @@
                   </h1>
                 </div>
                 <div class="modal-body">
-                  <p id="result" class="result">12,000</p>
+                  <p id="result" class="result"></p>
                   <p class="note">after tax deductions</p>
                 </div>
                 <div class="modal-footer">
