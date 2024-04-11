@@ -55,6 +55,7 @@
               id="annual_income"
               placeholder="Enter gross annual income"
               aria-describedby="annual_income"
+              required
             />
             <img
               src="assets/icon/exclamation.svg"
@@ -90,6 +91,7 @@
               id="extra_income"
               placeholder="Enter extra income from other sources"
               aria-describedby="extra_income"
+              required
             />
           </div>
           <div class="mb-3">
@@ -112,6 +114,7 @@
               id="age"
               class="form-select age"
               aria-label="Enter extra age"
+              required
             >
               <option selected></option>
               <option value="1">One</option>
@@ -141,6 +144,7 @@
               id="deductions"
               placeholder="Add total applicable deductions"
               aria-describedby="deductions"
+              required
             />
           </div>
           <button
@@ -149,6 +153,7 @@
             class="btn btn-primary submit"
             data-bs-toggle="modal"
             data-bs-target="#submitModal"
+            disabled
           >
             Submit
           </button>
