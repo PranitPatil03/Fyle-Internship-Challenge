@@ -7,16 +7,16 @@ $(document).ready(function () {
 
   function calculateTax(annualIncome, extraIncome, deductions, age) {
     const taxRates = {
-      under40: 0.3,
-      "40to60": 0.4,
-      over60: 0.1,
+      1: 0.3,
+      2: 0.4,
+      3: 0.1,
     };
 
-    const overallIncome = annualIncome + extraIncome - deductions;
-    const taxPercentage = taxRates[age];
+    let overallIncome = annualIncome + extraIncome - deductions;
+    let taxPercentage = taxRates[age];
 
     if (overallIncome > 800000) {
-      const tax = taxPercentage * (overallIncome - 8);
+      let tax = taxPercentage * (overallIncome - 8);
       return overallIncome - tax;
     } else {
       return overallIncome;
@@ -48,15 +48,15 @@ $(document).ready(function () {
         isValid = false;
       }
     });
-  
+
     $("#submit").prop("disabled", !isValid);
   }
-  
+
   checkRequiredFields();
-  
+
   $("#form :input[required]").on("input", function () {
     checkRequiredFields();
   });
-  
+
   $('[data-bs-toggle="tooltip"]').tooltip();
 });
