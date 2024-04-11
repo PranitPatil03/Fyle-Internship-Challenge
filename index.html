@@ -143,9 +143,46 @@
               aria-describedby="deductions"
             />
           </div>
-          <button type="submit" class="btn btn-primary submit" id="submit">
+          <button
+            type="submit"
+            id="submit"
+            class="btn btn-primary submit"
+            data-bs-toggle="modal"
+            data-bs-target="#submitModal"
+          >
             Submit
           </button>
+
+          <div
+            class="modal fade"
+            id="submitModal"
+            tabindex="-1"
+            aria-labelledby="submitModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="submitModalLabel">
+                    Your overall income will be
+                  </h1>
+                </div>
+                <div class="modal-body">
+                  <p id="result" class="result">12,000</p>
+                  <p class="note">after tax deductions</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary modal_close_btn"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>

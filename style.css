@@ -55,17 +55,49 @@ input::placeholder {
   font-weight: 400;
 }
 
-.annual_income{
+.annual_income {
   font-weight: bold;
 }
 
-.deductions{
+.deductions {
   font-weight: bold;
 }
 
 .custom-tooltip .tooltip-inner {
-  background-color: rgb(95, 93, 93); 
-  color: #ffffff; 
+  background-color: rgb(95, 93, 93);
+  color: #ffffff;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.note {
+  margin-top: -15px;
+}
+
+.modal_close_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 20px;
+  outline: #6459f4;
+  background-color: #6459f4 !important;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
