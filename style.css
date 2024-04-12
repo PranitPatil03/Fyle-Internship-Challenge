@@ -100,6 +100,10 @@ input::placeholder {
   background-color: #6459f4 !important;
 }
 
+.calTax{
+  font-weight: 600;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;

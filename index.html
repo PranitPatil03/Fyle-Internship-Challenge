@@ -70,7 +70,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="annual_income" class="form-label annual_income"
+            <label for="extra_income" class="form-label annual_income"
               >Enter extra income
               <span class="icon_span">
                 <img
@@ -81,7 +81,7 @@
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
                   data-bs-custom-class="custom-tooltip"
-                  data-bs-title="Gross annual income is your total salary in a year before any deductions"
+                  data-bs-title="Extra income refers to additional earnings beyond your regular salary, such as from freelance work, investments, or bonuses."
                 />
               </span>
             </label>
@@ -106,7 +106,7 @@
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
                   data-bs-custom-class="custom-tooltip"
-                  data-bs-title="Gross annual income is your total salary in a year before any deductions"
+                  data-bs-title="Choose the age group that matches your age."
                 />
               </span>
             </label>
@@ -134,7 +134,7 @@
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
                   data-bs-custom-class="custom-tooltip"
-                  data-bs-title="Gross annual income is your total salary in a year before any deductions"
+                  data-bs-title="Deductions are amounts subtracted from taxable income, reducing the total amount subject to taxation."
                 />
               </span>
             </label>
@@ -174,6 +174,9 @@
                 <div class="modal-body">
                   <p id="result" class="result"></p>
                   <p class="note">after tax deductions</p>
+                  <p class="">
+                    You have to pay <span class="calTax" id="calTax"></span> tax
+                  </p>
                 </div>
                 <div class="modal-footer">
                   <button

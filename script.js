@@ -15,11 +15,19 @@ $(document).ready(function () {
     let overallIncome = annualIncome + extraIncome - deductions;
     let taxPercentage = taxRates[age];
 
+    let tax = 0;
+
     if (overallIncome > 800000) {
-      let tax = taxPercentage * (overallIncome - 8);
-      return overallIncome - tax;
+      tax = taxPercentage * (overallIncome - 8);
+      return {
+        overallIncome: overallIncome - tax,
+        tax: tax,
+      };
     } else {
-      return overallIncome;
+      return {
+        overallIncome: overallIncome,
+        tax: tax,
+      };
     }
   }
 
@@ -31,14 +39,13 @@ $(document).ready(function () {
     const deductions = parseFloat($deductions.val());
     const age = $age.val();
 
-    const afterTaxIncome = calculateTax(
-      annualIncome,
-      extraIncome,
-      deductions,
-      age
-    );
+    let taxResult = calculateTax(annualIncome, extraIncome, deductions, age);
+
+    const afterTaxIncome = taxResult.overallIncome;
+    const tax = taxResult.tax;
 
     $("#result").text(afterTaxIncome.toFixed(2));
+    $("#calTax").text(tax.toFixed(2));
   });
 
   function checkRequiredFields() {
